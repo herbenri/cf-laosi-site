@@ -1,7 +1,9 @@
 # CF老四 &amp; 四门 · 粉丝小站
 
-一个用来练手的**纯静态网站**：一个 `index.html` + 一个 CSS + 一个 JS，没有框架、没有构建步骤。
+一个用来练手的**纯静态网站**：三个 HTML 页面 + 一个 CSS + 两个 JS，没有框架、没有构建步骤。
 正好适合用 **GitHub 存代码 + Cloudflare Pages 自动发布**。
+
+站点结构：**首页群像墙**（悬停放大、点击进入个人页）→ **成员个人页**（简介 / 擅长干员 / 切片 / 表情包）→ **图库页**（夺冠视频 + 照片墙）。
 
 内容方向：抖音主播 **CF老四**（账号「CF老四（盼之没毛病）」，粉丝 360 万+）——ID 前面挂着 CF，靠《三角洲行动》站稳头部。
 围绕他的圈子叫 **四门**：常驻有元帅路西法（苏州超级武将杯 S2 冠军）、小艺、小扑、观赏、水尊，另外还有一批切片作者。
@@ -14,13 +16,19 @@
 
 ```
 cf-laosi-site/
-├── index.html          ← 页面内容全在这里
+├── index.html          ← 首页：hero + 群像墙 + 数据条 + 时间线 + 切片组 + 金句
+├── member.html         ← 个人页模板（?id=laosi / luxifa / xiaoyi / xiaopu / guanshang / shuizun）
+├── gallery.html        ← 图库：夺冠视频（B 站嵌入）+ 照片墙
 ├── assets/
-│   ├── style.css       ← 全部样式（配色、布局、动画）
-│   └── main.js         ← 滚动淡入 + 随机金句 + 年份
-├── .gitignore          ← 告诉 Git 忽略哪些垃圾文件
-└── README.md           ← 就是你正在看的这份
+│   ├── data.js         ← ★ 所有人的资料都在这里：简介、干员、切片、表情包、图库清单
+│   ├── app.js          ← 渲染三张页面 + 滚动淡入 + 随机金句
+│   └── style.css       ← 全部样式（配色、布局、悬停放大、响应式）
+├── images/             ← 放你自己的照片（图库页从那读取）
+├── .gitignore
+└── README.md
 ```
+
+**改内容基本只需要动 `assets/data.js`** —— 加一个成员就是往 `CREW` 数组里加一个对象，首页、个人页、上下页导航会自动跟着变。
 
 **为什么用纯静态？** 因为 Cloudflare Pages 最喜欢这种项目：不需要 `npm install`、不需要 `npm run build`，构建命令留空，直接把文件传上去就能访问。等以后想上 Vue/React 再加构建步骤也不迟。
 
@@ -45,14 +53,15 @@ cf-laosi-site/
 
 | 想改什么 | 改哪里 |
 | --- | --- |
-| 标题、简介、导航 | `index.html` 里 `<h1>`、`.lede`、`.site-nav` |
-| 三个关键词卡片 | `index.html` 里 `<article class="card">` 三块 |
-| 老四本人的档案卡 | `index.html` 里 `<article class="profile">`：`.profile-desc` 改简介，`.profile-facts` 改数据 |
-| 四门成员卡 | `.member-grid` 下的 `<article class="member">`：改 `.member-name`、`.member-id`（抖音号）、`.member-tag`、`.member-desc`、`.member-facts`、`.member-link`；加人复制一整块 |
-| 冠军高亮卡片 | 卡片加 `is-champ` 类 + 里面放 `<span class="champ-badge">…</span>` |
-| 切片组名单 | `index.html` 里 `<ul class="crew">` 下的 `<li>` |
-| 时间线 | `index.html` 里 `<ol class="timeline">` 下的 `<li>` |
-| 金句 | `assets/main.js` 里的 `quotes` 数组 |
+| 首页标题、简介、按钮 | `index.html` 里 `<h1>`、`.lede`、`.hero-actions` |
+| **某个人的简介 / 干员 / 切片 / 表情包** | `assets/data.js` 里 `CREW` 数组对应那个人：`intro`（简介段落）、`operators`（干员）、`clips`（切片，含链接）、`memes`（表情包文字）、`facts`（数据格） |
+| 加一个新成员 | 在 `CREW` 里复制一个对象改 `id` / `name` / `char` / `theme`，首页和上下页自动出现 |
+| 成员卡片配色 | 对象的 `theme` 字段：`orange` `gold` `cyan` `violet` `teal` `pink` |
+| 时间线 | `assets/data.js` 里的 `TIMELINE` |
+| 切片组名单 | `assets/data.js` 里的 `EDITORS` |
+| 图库照片 | 图片放进 `images/`，再把 `GALLERY` 对应项的 `file` 写成 `"images/xxx.jpg"` |
+| 图库的夺冠视频 | `assets/data.js` 里的 `CHAMP_VIDEOS`（填 B 站 `bvid`）和 `CHAMP_LINKS` |
+| 金句 | `assets/app.js` 里的 `QUOTES` |
 | 配色（橙 → 换别的色） | `assets/style.css` 顶部 `:root` 里的 `--brand` / `--brand-2` |
 | 顶部“示例站点”提示条 | 删掉 `index.html` 里 `<div class="ribbon">…</div>` 那一行 |
 
@@ -206,9 +215,9 @@ git push
 2. **先把本地项目复制一份到桌面**（这样能避开隐藏的 `.git` 文件夹），然后**双击进入** `cf-laosi-site` 文件夹，`Ctrl + A` 全选，把 `index.html`、`assets`、`README.md` 一起拖进浏览器上传区。
    > 关键：拖的是文件夹**里面的东西**。如果直接拖 `cf-laosi-site` 这个文件夹，GitHub 会多套一层目录（变成 `cf-laosi-site/index.html`），Cloudflare 的输出目录就得跟着改。
 3. 等文件列表显示完，在下面的 **Commit message** 里写 `初始化站点`，点 **Commit changes**（如果按钮是 **Propose changes**，说明你选了新分支，改选直接提交到 `main`）。
-4. 回到仓库首页确认结构：`index.html` 在根目录，`assets/` 里能看到 `style.css` 和 `main.js`。
+4. 回到仓库首页确认结构：`index.html` 在根目录，`assets/` 里能看到 `style.css`、`data.js`、`app.js`。
 
-网页上传的限制：单文件 25 MiB、一次最多 100 个文件——这个项目 5 个文件，完全够。
+网页上传的限制：单文件 25 MiB、一次最多 100 个文件——这个项目 30 个文件，够用。
 
 ### A3. 之后改内容
 
@@ -220,6 +229,73 @@ git push
 
 - **只用网页**：本地文件夹当作备份，别再 push。
 - **想回到本地 Git**：把本地这份删掉，`git clone` 仓库到新目录，以后只在克隆出来的那个目录里改。
+
+---
+
+## 附录 B：照片与表情包上传说明
+
+### B1. 成员照片 —— 放进去就自动生效，不用改代码
+
+卡片和头像的图片地址是 `images/members/<id>.jpg`，加载失败才回落到同名的 `.svg` 插画。
+所以**你只要把真照片命名成 `<id>.jpg` 丢进 `images/members/`，刷新页面就换好了。**
+
+> **更省事的做法**：把照片丢进项目**同级**的 `photos-inbox\` 文件夹（文件名就是 id，随便什么尺寸、jpg/png 都行），
+> 然后双击 `tools\import-photos.cmd`。
+> 脚本会自动中心裁切 → 压缩成 600×800 的 jpg → 改名丢到 `images/members\`，你什么都不用算。
+> 处理完的源图会移到 `photos-inbox\_done\`，确认没问题再删。
+>
+> 图库图同理：文件名用 `01`~`09`，会被裁成 1200×900 放进 `images/shots\`。
+>
+> `tools\` 和 `photos-inbox\` 在站点仓库**外面**（和 `cf-laosi-site` 同级），不会传到 GitHub。
+
+命名对照表（`id` 就是个人页链接里的那个 `?id=`）：
+
+| id | 人名 | 照片放这里 |
+| --- | --- | --- |
+| `laosi` | CF老四 | `images/members/laosi.jpg` |
+| `luxifa` | 元帅路西法 | `images/members/luxifa.jpg` |
+| `xiaoyi` | 小艺 | `images/members/xiaoyi.jpg` |
+| `xiaopu` | 小扑 | `images/members/xiaopu.jpg` |
+| `guanshang` | 观赏 | `images/members/guanshang.jpg` |
+| `shuizun` | 水尊 | `images/members/shuizun.jpg` |
+| `zhenzhenbao` | 臻臻宝 | `images/members/zhenzhenbao.jpg` |
+| `xiaohanbao` | 小涵宝 | `images/members/xiaohanbao.jpg` |
+| `chunzhen` | 纯真 | `images/members/chunzhen.jpg` |
+| `shanguang` | 闪光大王 | `images/members/shanguang.jpg` |
+| `yaoyao` | 瑶瑶 | `images/members/yaoyao.jpg` |
+| `king08` | 08king | `images/members/king08.jpg` |
+
+**规格建议**：竖版 3:4（比如 600×800），单张 300KB 以内。图片会被裁成竖版铺满卡片，所以人尽量放中间。
+`.jpg` / `.png` / `.webp` 都能用，但代码里写死的是 `.jpg` —— 想用 png 就把 `assets/data.js` 里对应人的路径改掉，或者直接用在线工具转成 jpg 最省事。
+
+### B2. 图库照片
+
+`images/shots/01.jpg` ~ `09.jpg` 对应图库页的九格，标题在 `assets/data.js` 的 `GALLERY` 里改：
+
+```js
+{ file: "images/shots/01.jpg", caption: "夺冠夜 · 四门合照", tag: "" }
+```
+
+`tag` 留空就不显示角标（现在是「待替换」）。想加第 10 张就复制一行，编号接着往下排。
+图库建议横版 4:3，宽度 1600px 以内。
+
+### B3. 表情包
+
+现在个人页的「表情包」是**文字卡**（`assets/data.js` 里每个人的 `memes` 数组）。
+想换成真实图片，需要把那段渲染改成图片网格 —— 跟我说一声，或者自己改 `assets/app.js` 里 `memesBlock` 那段，把 `<div class="meme"><span>文字</span></div>` 换成 `<img>` 即可。
+
+### B4. 上传后没生效？按顺序查
+
+1. **文件名大小写**：`Laosi.jpg` ≠ `laosi.jpg`，构建环境是 Linux，区分大小写。
+2. **放错层级**：必须是 `images/members/laosi.jpg`，不是 `images/laosi.jpg`。
+3. **扩展名**：代码写的是 `.jpg`，`.jpeg` 不认。
+4. **缓存**：Cloudflare 有缓存，`Ctrl + F5` 强刷，或者等一分钟。
+5. **真没上传成功**：去 GitHub 仓库点进 `images/members/` 看文件在不在。
+
+### B5. 版权提醒
+
+真人照片请确认你有使用/传播的权利（本人授权、或你自己的直播截图）。
+这个站是粉丝向的公开页面，别放来源不明的图片，也别挂商业广告 —— 那性质就变了。
 
 ---
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CF老四 &amp; 四门 · 粉丝档案馆</title>
-  <meta name="description" content="抖音主播 CF老四：账号「CF老四（盼之没毛病）」，粉丝 360 万+，靠《三角洲行动》站稳头部。常驻四门：元帅路西法、小艺、小扑、观赏、水尊。" />
+  <meta name="description" content="抖音主播 CF老四 与四门群像：元帅路西法、小艺、小扑、观赏、水尊，每人一个独立页面，含简介、常用干员、切片与表情包。" />
   <meta name="theme-color" content="#0a0b10" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff5c2b'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='%23120a05' font-family='sans-serif' font-weight='700'%3E%E5%9B%9B%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/style.css" />
@@ -14,15 +14,15 @@
   <div class="ribbon">粉丝向示例站 · 数据为 2026 年 11 月查询到的抖音主页显示值，会随时间变动</div>
 
   <header class="site-header">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <span class="brand-mark">四</span>
       <span class="brand-text">CF老四<em>粉丝档案馆</em></span>
     </a>
     <nav class="site-nav">
-      <a href="#about">人物</a>
-      <a href="#crew">四门</a>
-      <a href="#editors">切片</a>
+      <a href="#wall">群像</a>
+      <a href="gallery.html">图库</a>
       <a href="#timeline">时间线</a>
+      <a href="#quotes">金句</a>
     </nav>
     <a class="btn btn-ghost btn-sm" href="https://m.douyin.com/share/user/MS4wLjABAAAAMG7MVWcsu3-zwvMli4R6zsggRJQR31pLd5PQdUU9K5k" target="_blank" rel="noopener">去抖音 ↗</a>
   </header>
@@ -34,11 +34,11 @@
         <h1>CF老四<span class="grad"> &amp; </span>四门</h1>
         <p class="lede">
           名字前面挂着 CF，真正让他站稳头部的是《三角洲行动》。
-          一个人开麦指挥，一群人跟着冲——围着老四的这一圈子人，粉丝管他们叫「四门」。
+          一个开麦指挥的队长，和五个各管一摊的人——合起来就是「四门」。
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#about">老四档案</a>
-          <a class="btn btn-ghost" href="#crew">看四门都有谁</a>
+          <a class="btn btn-primary" href="#wall">看群像</a>
+          <a class="btn btn-ghost" href="gallery.html">进图库</a>
         </div>
         <ul class="chips">
           <li>三角洲行动</li>
@@ -47,17 +47,18 @@
           <li>#CF老四二创大赛</li>
         </ul>
       </div>
+    </section>
 
-      <div class="hero-art" data-reveal>
-        <div class="art-card">
-          <div class="avatar">四</div>
-          <p class="art-name">CF老四</p>
-          <p class="art-sub">盼之没毛病 · 四门</p>
-          <span class="float float-1">开麦</span>
-          <span class="float float-2">指挥</span>
-          <span class="float float-3">上车</span>
-        </div>
+    <section id="wall" class="wrap section">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">01 / 群像</p>
+        <h2>四门这些人</h2>
+        <p class="section-sub">
+          鼠标停在谁身上谁就放大，点一下进他的独立页面——简介、常用干员、切片、表情包都在里面。
+          前六位是有公开资料的，后六位先占位，等你补。
+        </p>
       </div>
+      <div class="wall" id="wall-grid"></div>
     </section>
 
     <section class="wrap stats" data-reveal>
@@ -70,8 +71,8 @@
         <p class="stat-label">累计获赞</p>
       </div>
       <div class="stat">
-        <p class="stat-num">5<em>位</em></p>
-        <p class="stat-label">常驻四门</p>
+        <p class="stat-num">12<em>人</em></p>
+        <p class="stat-label">四门在册</p>
       </div>
       <div class="stat">
         <p class="stat-num">S2<em>冠军</em></p>
@@ -79,267 +80,30 @@
       </div>
     </section>
 
-    <section id="about" class="wrap section">
+    <section id="timeline" class="wrap section">
       <div class="section-head" data-reveal>
-        <p class="eyebrow">01 / 人物</p>
-        <h2>老四档案</h2>
-        <p class="section-sub">想快速搞清他是谁、播什么、什么时候在，看这一块就够。</p>
+        <p class="eyebrow">02 / 时间线</p>
+        <h2>从 CF 起号，到四门成名</h2>
+        <p class="section-sub">一条时间线，把「怎么火起来的」讲清楚。</p>
       </div>
-
-      <article class="profile" data-reveal>
-        <div class="profile-head">
-          <div class="avatar">四</div>
-          <div class="profile-meta">
-            <h3>CF老四</h3>
-            <p class="profile-id">账号名「CF老四（盼之没毛病）」 · 抖音号主页未公开</p>
-            <div class="tags">
-              <span>三角洲行动</span>
-              <span>FPS 直播</span>
-              <span>团队指挥</span>
-              <span>二创大赛发起人</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="profile-desc">
-          早年用「CF」开头起号，内容是《穿越火线》，所以名字一直没改。
-          《三角洲行动》上线之后重心整体搬过去，靠"边打边安排人"的直播节奏留住了大批观众，
-          现在属于三角洲行动区头部主播之一，直播间经常做到十万加在线。
-          他把常驻队友、切片作者、录屏组这一整圈子叫「四门」，粉丝也跟着这么叫；
-          每年办的 <strong>#CF老四二创大赛</strong> 是站内二创的一大来源。
-        </p>
-
-        <dl class="profile-facts">
-          <div><dt>粉丝</dt><dd>约 360.7 万</dd></div>
-          <div><dt>获赞</dt><dd>约 1423 万</dd></div>
-          <div><dt>开播</dt><dd>午间时段（约 12:00–14:00）</dd></div>
-          <div><dt>主玩</dt><dd>三角洲行动（早期穿越火线）</dd></div>
-        </dl>
-
-        <a class="member-link" href="https://m.douyin.com/share/user/MS4wLjABAAAAMG7MVWcsu3-zwvMli4R6zsggRJQR31pLd5PQdUU9K5k" target="_blank" rel="noopener">打开抖音主页 ↗</a>
-      </article>
-
-      <div class="cards cards-gap">
-        <article class="card" data-reveal>
-          <p class="num">01</p>
-          <h3>名字：CF 起号</h3>
-          <p>ID 前面挂着「CF」，早期也确实在打《穿越火线》。名字留到了现在，人早就不只播 CF 了。</p>
-        </article>
-        <article class="card" data-reveal>
-          <p class="num">02</p>
-          <h3>出圈：三角洲</h3>
-          <p>《三角洲行动》上线后整体转过去，突袭、攻坚、撤离，加上一边打一边指挥的节奏，切片大量出圈。</p>
-        </article>
-        <article class="card" data-reveal>
-          <p class="num">03</p>
-          <h3>招牌：四门</h3>
-          <p>一个人打叫技术，一群人打才叫节目。四门的人轮着上线，名场面基本都从"配合失败"里长出来。</p>
-        </article>
-      </div>
+      <ol class="timeline" id="timeline" data-reveal></ol>
     </section>
 
-    <section id="crew" class="wrap section">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">02 / 四门</p>
-        <h2>四门常驻名单</h2>
-        <p class="section-sub">
-          「四门」是围在老四身边的这一圈子人。下面只列常驻出镜的几位，每个人的账号、定位和已知高光都写在卡里。
-        </p>
-      </div>
-
-      <div class="member-grid">
-        <article class="member is-champ" data-reveal>
-          <span class="champ-badge">武将杯 S2 冠军</span>
-          <div class="member-top">
-            <div class="member-avatar">路</div>
-            <div>
-              <h3 class="member-name">元帅路西法</h3>
-              <p class="member-id">抖音号未公开 · 账号「元帅路西法（三角洲行动）」</p>
-            </div>
-          </div>
-          <p class="member-tag">四门战力天花板 · 突击手</p>
-          <p class="member-desc">
-            职业级出身转主播，打法极凶，残血还敢正面压。
-            2026 年苏州超级武将杯 S2 从复活赛一路杀进决赛，最终 16 杀拿下总冠军，据赛事方口径奖金百万；
-            夺冠那晚老四在直播间当场哽咽。名场面是各种 1V9 残局，弹幕直接叫他"总裁"。
-          </p>
-          <dl class="member-facts">
-            <div><dt>高光</dt><dd>苏州超级武将杯 S2 总冠军（决赛 16 杀）</dd></div>
-            <div><dt>风格</dt><dd>突击 / 残局收割 / 敢打敢冲</dd></div>
-          </dl>
-          <a class="member-link" href="https://www.douyin.com/search/%E5%85%83%E5%B8%85%E8%B7%AF%E8%A5%BF%E6%B3%95" target="_blank" rel="noopener">在抖音搜索 ↗</a>
-        </article>
-
-        <article class="member" data-reveal>
-          <div class="member-top">
-            <div class="member-avatar">艺</div>
-            <div>
-              <h3 class="member-name">小艺</h3>
-              <p class="member-id">抖音号未公开 · 账号「小艺（三角洲行动）」</p>
-            </div>
-          </div>
-          <p class="member-tag">机动位 · 最能跑的那个</p>
-          <p class="member-desc">
-            主页简介写得很直白：每天 12:00–14:00 直播，@CF老四 保镖，商务走 BBJU 电竞俱乐部。
-            自称「四门梦泪，三角洲最能跑的男人」——机动、转点、拉扯是他的活，老四一喊"你去那边"，出去的基本就是他。
-          </p>
-          <dl class="member-facts">
-            <div><dt>开播</dt><dd>每天 12:00–14:00</dd></div>
-            <div><dt>角色</dt><dd>跑图 / 机动 / 保镖位</dd></div>
-          </dl>
-          <a class="member-link" href="https://m.douyin.com/share/user/MS4wLjABAAAAe8Maa8ywdWsWseE_najmflB-_DzMJaM8kVHkY8LnBJGnhDkwrarCXaF_6EdBauI3" target="_blank" rel="noopener">打开抖音主页 ↗</a>
-        </article>
-
-        <article class="member" data-reveal>
-          <div class="member-top">
-            <div class="member-avatar">扑</div>
-            <div>
-              <h3 class="member-name">小扑</h3>
-              <p class="member-id">抖音号：XpsttkX</p>
-            </div>
-          </div>
-          <p class="member-tag">常驻队友 · 二创素材大户</p>
-          <p class="member-desc">
-            四门里比较"上镜"的一位，粉丝约 28.9 万。切片传播度很高——「扑神我走不出去，我想她了」那条二创单条拿了 2.6 万赞，
-            弹幕现在看到他就刷这句。平时跟着老四一起开黑，属于画面角落里永远有戏的人。
-          </p>
-          <dl class="member-facts">
-            <div><dt>粉丝</dt><dd>约 28.9 万</dd></div>
-            <div><dt>获赞</dt><dd>约 109.7 万</dd></div>
-          </dl>
-          <a class="member-link" href="https://m.douyin.com/share/user/MS4wLjABAAAAYEcIYw79Sh3KA4uyHDJbOOmNot-7EsIOFoYdAsXTKj9NfnINJYoxQ_ldDtkKuLzb" target="_blank" rel="noopener">打开抖音主页 ↗</a>
-        </article>
-
-        <article class="member" data-reveal>
-          <div class="member-top">
-            <div class="member-avatar">赏</div>
-            <div>
-              <h3 class="member-name">观赏</h3>
-              <p class="member-id">抖音号未核实 · 账号「观赏（三角洲行动）」</p>
-            </div>
-          </div>
-          <p class="member-tag">常驻队友 · 弹幕梗制造机</p>
-          <p class="member-desc">
-            四门的常驻面孔之一，出圈方式比较特别：切片里流传着「观赏被禁团播一年」的说法，后来直接变成弹幕梗，
-            他本人跟着这条梗一起被记住了。和老四连麦时的反应比操作更有戏。
-          </p>
-          <dl class="member-facts">
-            <div><dt>标签</dt><dd>弹幕梗 / 连麦反应</dd></div>
-            <div><dt>出镜</dt><dd>团队开黑、连麦</dd></div>
-          </dl>
-          <a class="member-link" href="https://www.douyin.com/search/%E8%A7%82%E8%B5%8F%20%E4%B8%89%E8%A7%92%E6%B4%B2" target="_blank" rel="noopener">在抖音搜索 ↗</a>
-        </article>
-
-        <article class="member" data-reveal>
-          <div class="member-top">
-            <div class="member-avatar">尊</div>
-            <div>
-              <h3 class="member-name">水尊</h3>
-              <p class="member-id">抖音号未核实 · 账号「水尊（三角洲行动）」</p>
-            </div>
-          </div>
-          <p class="member-tag">语言尖刀 · 教学局常客</p>
-          <p class="member-desc">
-            自我介绍视频就叫《你好！我叫水尊！》。二创「未闻花名-水尊」重置版单条拿到 27.6 万赞，是四门里素材最多的人之一；
-            微博上有人用"语言尖刀领域"形容他在教学局里的输出，嘴上的活比枪法更出名。
-          </p>
-          <dl class="member-facts">
-            <div><dt>高光</dt><dd>二创「未闻花名-水尊」27.6 万赞</dd></div>
-            <div><dt>标签</dt><dd>语言输出 / 教学局</dd></div>
-          </dl>
-          <a class="member-link" href="https://www.douyin.com/search/%E6%B0%B4%E5%B0%8A%20%E4%B8%89%E8%A7%92%E6%B4%B2" target="_blank" rel="noopener">在抖音搜索 ↗</a>
-        </article>
-
-        <article class="member member-empty" data-reveal>
-          <div class="member-top">
-            <div class="member-avatar">＋</div>
-            <div>
-              <h3 class="member-name">还有谁</h3>
-              <p class="member-id">名单还在补充</p>
-            </div>
-          </div>
-          <p class="member-tag">空缺位</p>
-          <p class="member-desc">
-            四门的编制不固定，联动、串门、临时上车的人一直在变。
-            复制上面任意一张卡，把名字、账号、定位填进去，就是一位新成员。
-          </p>
-        </article>
-      </div>
-
-      <p class="members-note">
-        * 数据来自抖音主页公开显示（2026 年 11 月）。路西法的夺冠成绩见赛事与切片报道；观赏、水尊的账号由于主页未公开显示抖音号，链接指向站内搜索。
-      </p>
-    </section>
-
-    <section id="editors" class="wrap section">
+    <section class="wrap section">
       <div class="section-head" data-reveal>
         <p class="eyebrow">03 / 切片</p>
         <h2>四门的另一半：切片组</h2>
-        <p class="section-sub">
-          这些人不在出镜阵容里，但四门一半的知名度是他们剪出来的。刷到"老四"的视频，很多出自他们。
-        </p>
+        <p class="section-sub">这些人不在出镜阵容里，但四门一半的知名度是他们剪出来的。</p>
       </div>
-
-      <ul class="crew" data-reveal>
-        <li>CF老四（四门切片）</li>
-        <li>老四门</li>
-        <li>四门人物志（时光机）</li>
-        <li>白昼（老四切片）</li>
-        <li>711（方方电竞录屏组）</li>
-        <li>小方砖</li>
-        <li>Cc（老四的切片）</li>
-        <li>跑贼慢</li>
-        <li>SGA4（切片）</li>
-      </ul>
-
-      <p class="members-note">
-        * 名单按公开视频的发布者整理，只列反复出现的账号；切片组人手变动快，欢迎补充。
-      </p>
-    </section>
-
-    <section id="timeline" class="wrap section">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">04 / 时间线</p>
-        <h2>从 CF 起号，到四门成名</h2>
-        <p class="section-sub">一条时间线，把"怎么火起来的"讲清楚。</p>
-      </div>
-
-      <ol class="timeline">
-        <li data-reveal>
-          <span class="when">2023</span>
-          <h3>CF 起号</h3>
-          <p>ID 前面挂着 CF，早期内容以《穿越火线》为主，先把镜头感和嘴上的节奏练了出来。</p>
-        </li>
-        <li data-reveal>
-          <span class="when">2024.09</span>
-          <h3>换主战场：三角洲</h3>
-          <p>《三角洲行动》上线后重心整体搬过去，切片开始大量出圈，"CF老四"这个 ID 反而成了标签。</p>
-        </li>
-        <li data-reveal>
-          <span class="when">2025</span>
-          <h3>四门成型</h3>
-          <p>路西法、小艺、小扑、观赏、水尊陆续成为固定班底，单人直播变成一群人整活；二创大赛开始成型。</p>
-        </li>
-        <li data-reveal>
-          <span class="when">2026</span>
-          <h3>武将杯 S2 冠军</h3>
-          <p>路西法在苏州超级武将杯 S2 决赛 16 杀夺冠，老四在直播间当场哽咽——四门的第一个大冠军。</p>
-        </li>
-        <li data-reveal>
-          <span class="when">现在</span>
-          <h3>午间开播，切片日更</h3>
-          <p>中午两点前基本能在直播间找到人，晚上是切片和二创的战场。人一直在，梗也一直在更新。</p>
-        </li>
-      </ol>
+      <ul class="crew" id="editors" data-reveal></ul>
     </section>
 
     <section id="quotes" class="wrap section">
       <div class="section-head" data-reveal>
-        <p class="eyebrow">05 / 金句</p>
+        <p class="eyebrow">04 / 金句</p>
         <h2>随手记几句</h2>
-        <p class="section-sub">点一下按钮随机抽一句（示例文案，换成他真说过的）。</p>
+        <p class="section-sub">点一下随机抽一句（示例文案，换成他真说过的）。</p>
       </div>
-
       <div class="quote-box" data-reveal>
         <p id="quote-text" class="quote-text">「路西法，你去那边。」</p>
         <button id="quote-btn" class="btn btn-primary" type="button">再抽一句</button>
@@ -354,6 +118,7 @@
     </div>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
