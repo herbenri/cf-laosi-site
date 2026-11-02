@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="照片占位 9">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141821"/>
+      <stop offset="1" stop-color="#0b0d13"/>
+    </linearGradient>
+    <radialGradient id="g" cx="20%" cy="10%" r="80%">
+      <stop offset="0" stop-color="#ff5c2b" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ff5c2b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
+    <path d="M0 200H800M0 400H800M200 0V600M400 0V600M600 0V600"/>
+  </g>
+  <rect x="1" y="1" width="798" height="598" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-dasharray="10 8"/>
+  <text x="400" y="320" text-anchor="middle" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="120" font-weight="800" fill="#ffffff" fill-opacity="0.10">09</text>
+  <text x="400" y="376" text-anchor="middle" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="20" letter-spacing="6" fill="#98a1b4">PHOTO PLACEHOLDER</text>
+</svg>
